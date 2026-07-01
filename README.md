@@ -1,59 +1,78 @@
-# Exvideos
+# FitList App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+Este projeto foi gerado utilizando o [Angular CLI](https://github.com/angular/angular-cli) versão 21.2.0.
 
-## Development server
+## Sobre o projeto
 
-To start a local development server, run:
+O FitList App é uma aplicação web desenvolvida em Angular que permite o gerenciamento de itens através de operações de CRUD (Criar, Ler, Atualizar e Deletar).
 
-```bash
+O principal objetivo deste projeto é praticar conceitos de desenvolvimento front-end com Angular, como componentização, serviços, rotas e estrutura de aplicações SPA (Single Page Application).
+
+## Servidor de desenvolvimento
+
+Para iniciar um servidor local de desenvolvimento, execute:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Após iniciar o servidor, acesse no navegador:
 
-## Code scaffolding
+http://localhost:4200/
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+A aplicação será recarregada automaticamente sempre que houver alterações nos arquivos.
 
-```bash
-ng generate component component-name
-```
+## Geração de código (scaffolding)
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+O Angular CLI possui ferramentas de geração de código.
 
-```bash
+Para criar um novo componente, execute:
+
+ng generate component nome-do-componente
+
+Para ver todas as opções disponíveis:
+
 ng generate --help
-```
 
-## Building
+## Build do projeto
 
-To build the project run:
+Para gerar a versão de produção do projeto, execute:
 
-```bash
 ng build
-```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Os arquivos gerados serão armazenados na pasta dist/. A versão de produção é otimizada para melhor desempenho.
 
-## Running unit tests
+## Testes unitários
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Para executar os testes unitários, utilize:
 
-```bash
 ng test
-```
 
-## Running end-to-end tests
+## Testes end-to-end (E2E)
 
-For end-to-end (e2e) testing, run:
+Para executar testes E2E, utilize:
 
-```bash
 ng e2e
-```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+O Angular CLI não inclui um framework E2E por padrão. Você pode configurar o que preferir.
 
-## Additional Resources
+## Tecnologias utilizadas
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 20+
+- TypeScript
+- Firebase Realtime Database
+- Angular Router
+- Componentes Standalone
+- Services
+- Reactive Forms
+- Pipes e Diretivas
+- Git e GitHub
+
+## Instalação do projeto
+
+git clone https://github.com/polatroke/fitlist-app.git
+cd fitlist-app
+npm install
+ng serve
+
+## Autor
+
+Projeto desenvolvido por Vítor Otávio Vieira bicca.
