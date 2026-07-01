@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="logo">FitList</div>
+  <nav class="menu">
+    <a routerLink="/">Home</a>
+    @if (autenticado) {
+    <a routerLink="/cadastrar-video">Cadastrar Exercício</a>
+    <a routerLink="/videos">Listar Exercícios</a>
+    <span class="user-name">
+      {{ userName }}
+    </span>
+    <button type="button" class="logout-btn" (click)="logout()">
+      Sair
+    </button>
+    } @else {
+    <a routerLink="/login">Login</a>
+    }
+  </nav>
+</header>

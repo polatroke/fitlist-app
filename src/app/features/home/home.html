@@ -1,0 +1,15 @@
+<section class="hero">
+  <h1>Bem vindo ao FitList</h1>
+  <p>Organize e descubra exercícios físicos ideais para seu treino.</p>
+  <div class="actions">
+    @if(autenticado){
+    <a routerLink="/videos" class="btn">
+      Ir para exercícios
+    </a>
+    } @else {
+    <a routerLink="/login" class="btn">
+      Fazer login
+    </a>
+    }
+  </div>
+</section>

@@ -1,0 +1,26 @@
+<section class="detail-container">
+  @if (loading){
+  <p>Carregando detalhes do exercício...</p>
+  }
+
+  @if (errorMessage){
+  <div class="error">
+    {{ errorMessage }}
+  </div>
+  }
+
+  @if (exercicio){
+  <div class="detail-card">
+    <div class="content">
+      <h2>{{ exercicio.nome }}</h2>
+      <p><strong>Grupo muscular: </strong>{{ exercicio.grupoMuscular }}</p>
+      <p><strong>Dificuldade: </strong>{{ exercicio.dificuldade }}</p>
+      <p><strong>Duração média: </strong>{{ exercicio.duracaoMedia }}</p>
+
+      <a routerLink="/videos" class="back-btn">
+        Voltar para a listagem
+      </a>
+    </div>
+  </div>
+  }
+</section>

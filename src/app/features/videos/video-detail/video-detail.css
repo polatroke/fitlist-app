@@ -1,0 +1,54 @@
+.detail-container {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #fff;
+}
+
+.detail-card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.detail-card img {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+}
+
+.content {
+  padding: 24px;
+}
+
+.content h2 {
+  margin-bottom: 16px;
+}
+
+.content p {
+  margin-bottom: 10px;
+}
+
+.watch-btn,
+.back-btn {
+  display: inline-block;
+  margin-top: 16px;
+  margin-right: 10px;
+  padding: 10px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.watch-btn {
+  background-color: #ff3d3d;
+}
+
+.back-btn {
+  background-color: #333;
+}
+
+.error {
+  background-color: #d93025;
+  padding: 16px;
+  border-radius: 8px;
+}

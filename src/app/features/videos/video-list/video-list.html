@@ -1,0 +1,62 @@
+<section class="list-box">
+  <div class="top-bar">
+    <h2>Lista de exercícios</h2>
+    <a routerLink="/cadastrar-video" class="btn">Novo Exercício</a>
+  </div>
+
+  @if (successMessage) {
+  <div class="success-message">
+    {{ successMessage }}
+  </div>
+  }
+  @if (errorMessage) {
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+  }
+
+  <div class="filters">
+    <input type="text" placeholder="Buscar por nome, grupo ou dificuldade" [(ngModel)]="searchTerm" />
+    <select [(ngModel)]="dificuldadeFilter">
+      <option value="">Todas as dificuldades</option>
+      <option value="iniciante">Iniciante</option>
+      <option value="intermediario">Intermediário</option>
+      <option value="avancado">Avançado</option>
+    </select>
+  </div>
+
+  @if (loading) {
+  <div class="loading">
+    <p>Carregando exercícios...</p>
+  </div>
+  }
+
+  @if (!loading && (exercicios | exercicioFilter: searchTerm : dificuldadeFilter).length === 0){
+  <div class="empty-state">
+    <p>Nenhum exercício encontrado para os filtros aplicados.</p>
+  </div>
+  }
+
+  <div class="video-grid">
+    @for (exercicio of exercicios | exercicioFilter: searchTerm : dificuldadeFilter; track exercicio.id){
+    <div class="video-item" [appHighlight]="exercicio.dificuldade">
+      <h3>{{ exercicio.nome }}</h3>
+      <p><strong>Grupo muscular: </strong>{{ exercicio.grupoMuscular }}</p>
+      <p><strong>Dificuldade: </strong>{{ exercicio.dificuldade }}</p>
+      <p><strong>Duração média: </strong>{{ exercicio.duracaoMedia }}</p>
+
+      <div class="actions">
+        <button type="button" class="detail-btn" (click)="detail(exercicio.id)">
+          Detalhes
+        </button>
+        <button type="button" class="edit-btn" (click)="edit(exercicio.id)">
+          Editar
+        </button>
+        <button type="button" class="delete-btn" (click)="remove(exercicio.id)">
+          Excluir
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+</section>

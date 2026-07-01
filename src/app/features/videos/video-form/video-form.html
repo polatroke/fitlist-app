@@ -1,0 +1,73 @@
+<div class="form-box">
+  <h2>
+    @if (editingId !== null) {
+    Editar exercício
+    } @else {
+    Cadastro de exercício
+    }
+  </h2>
+
+  @if (loadingData){
+  <div class="info-message">
+    Carregando dados do exercício...
+  </div>
+  }
+  @if (successMessage) {
+  <div class="success-message">
+    {{ successMessage }}
+  </div>
+  }
+  @if (errorMessage) {
+  <div class="error-message">
+    {{ errorMessage }}
+  </div>
+  }
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+    <div class="field">
+      <label for="nome">Nome do exercício</label>
+      <input id="nome" type="text" formControlName="nome" />
+
+      @if (form.controls.nome.touched && form.controls.nome.invalid) {
+      <small>Informe um nome com no mínimo 3 caracteres.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="grupoMuscular">Grupo muscular</label>
+      <input id="grupoMuscular" type="text" formControlName="grupoMuscular" />
+
+      @if (form.controls.grupoMuscular.touched && form.controls.grupoMuscular.invalid) {
+      <small>O grupo muscular é obrigatório.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="dificuldade">Dificuldade</label>
+      <input id="dificuldade" type="text" formControlName="dificuldade" />
+
+      @if (form.controls.dificuldade.touched && form.controls.dificuldade.invalid) {
+      <small>A dificuldade é obrigatória.</small>
+      }
+    </div>
+
+    <div class="field">
+      <label for="duracaoMedia">Duração média</label>
+      <input id="duracaoMedia" type="text" formControlName="duracaoMedia" />
+
+      @if (form.controls.duracaoMedia.touched && form.controls.duracaoMedia.invalid) {
+      <small>A duração média é obrigatória.</small>
+      }
+    </div>
+
+    <button type="submit" [disabled]="loading || loadingData">
+      @if (loading) {
+      Salvando...
+      } @else if (editingId !== null) {
+      Atualizar
+      } @else {
+      Salvar
+      }
+    </button>
+  </form>
+</div>
